@@ -12,23 +12,47 @@ public class BasicNavigation {
         //setup webdriver (browser driver) and create webdriver object
         WebDriverManager.chromedriver().setup();
 
-       WebDriver driver=new ChromeDriver();
+        WebDriver driver = new ChromeDriver();
         //in selenium everything starts from web driver interface
-             driver.get("http://google.com");
-        Thread.sleep (3000);//for demo, wait 3 seconds
+        driver.get("http://google.com");
+        // driver.manage().window().maximize();// to maximize browser
+        Thread.sleep(3000);//for demo, wait 3 seconds
 
-        String title =driver.getTitle(); //returns <<title>Google</title>
-        String expectedTitle= "yahoo";
+        String title = driver.getTitle(); //returns <<title>Google</title>
+        String expectedTitle = "Google";
 
         System.out.println("title is " + title);
-
-        if (expectedTitle.equals(title)){
-            System.out.println("TEST PASSED");
-        }else {
-            System.out.println("TEST FAILED");
+        if (expectedTitle.equals(title)) {
+            System.out.println("TITLE TEST PASSED");
+        } else {
+            System.out.println("TITLE TEST FAILED");
         }
+
+        driver.navigate().to("http://facebook.com");
+        if (driver.getTitle().toLowerCase().contains("facebook")) {
+            System.out.println(" CONTAIN TEST PASSED");
+
+        } else {
+            System.out.println("CONTAIN TEST FAILED");
+        }
+
+        driver.navigate().back();
+        driver.navigate().forward();
         driver.close();
 
 
     }
+
+    //burada stringler esit mi diye bakti?!
+    public static void verifyEquals(String arg1, String arg2) {
+
+        if (arg1.equals(arg2)) {
+            System.out.println("TEST PASSED");
+        } else {
+            System.out.println("TEST FAILED");
+
+
+        }
+    }
 }
+
