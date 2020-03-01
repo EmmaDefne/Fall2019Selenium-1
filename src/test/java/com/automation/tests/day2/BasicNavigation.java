@@ -37,7 +37,11 @@ public class BasicNavigation {
         }
 
         driver.navigate().back();
+        verifyEquals(driver.getTitle(),"Google");
         driver.navigate().forward();
+        System.out.println("title: " + driver.getTitle());
+        //driver.getTitle() --- returns page title of the page that is currently opened
+        driver.navigate().refresh();
         driver.close();
 
 
