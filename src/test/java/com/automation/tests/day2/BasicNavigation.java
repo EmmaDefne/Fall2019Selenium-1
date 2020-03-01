@@ -19,6 +19,9 @@ public class BasicNavigation {
         Thread.sleep(3000);//for demo, wait 3 seconds
 
         String title = driver.getTitle(); //returns <<title>Google</title>
+
+        //to get URL
+        System.out.println("URL : " + driver.getCurrentUrl());
         String expectedTitle = "Google";
 
         System.out.println("title is " + title);
