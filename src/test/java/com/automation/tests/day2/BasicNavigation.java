@@ -15,6 +15,6 @@ public class BasicNavigation {
        WebDriver driver=new ChromeDriver();
 
         //in selenium everything starts from web driver interface
-             driver.get("http://google.com");
+             driver.get("http://facebook.com");
     }
 }
