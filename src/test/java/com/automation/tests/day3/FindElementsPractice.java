@@ -23,10 +23,22 @@ public class FindElementsPractice {
         fullName.sendKeys("Miss Gumustop");
         WebElement email= driver.findElement(By.name("email"));
         email.sendKeys("emel@hotmail.com");
-
+        Thread.sleep(3000);
         WebElement signUp=driver.findElement(By.name("wooden_spoon"));
-        signUp.click();
+        signUp.submit();
+        Thread.sleep(4000);
+        String expected = "Thank you for signing up. Click the button below to return to the home page.";
 
-        driver.quit();
+        WebElement message = driver.findElement(By.className("subheader"));
+
+        String actual = message.getText(); // To get the text <h3>Text</h3>
+
+        if(expected.equals(actual)){
+            System.out.println("TEST PASSED");
+        }else {
+            System.out.println("TEST FAILED");
+        }
+
+        driver.quit();//to close everything
     }
 }
