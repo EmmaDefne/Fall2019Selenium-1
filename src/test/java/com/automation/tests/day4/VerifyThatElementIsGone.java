@@ -31,6 +31,17 @@ public class VerifyThatElementIsGone {
       System.out.println("TEST FAILED");
 }
 
+        Thread.sleep(2000);
+         //to find all buttons
+        //make sure thay you us findElements < ----- ending is important
+        List<WebElement>  buttons=driver.findElements(By.tagName("button"));
+        for (WebElement button : buttons) {
+            //click on every button
+            button.click();
+            Thread.sleep(2000);
+
+
+        }
 
     }
 }

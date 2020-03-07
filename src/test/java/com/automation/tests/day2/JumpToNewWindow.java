@@ -13,7 +13,7 @@ public class JumpToNewWindow {
         WebDriverManager.chromedriver().setup();
         WebDriver driver=new ChromeDriver();
 
-        driver.get("http://practice.cybertekschool.com/open_new_tab");
+        driver.get("http://google.com");
         Thread.sleep(5000);
 
         //every window has some id, this id calls window handle
