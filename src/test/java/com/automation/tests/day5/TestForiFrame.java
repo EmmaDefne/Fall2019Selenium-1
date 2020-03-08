@@ -20,11 +20,20 @@ public class TestForiFrame {
 
         System.out.println(textInput.getText());
 
+        textInput.clear();
+        textInput.sendKeys("write something ");
+        BrowserUtils.wait(4);
+
+
+
+
 
         //exit from the frame
         driver.switchTo().defaultContent();
 
 
+        WebElement heading=driver.findElement(By.tagName("h3"));
+        System.out.println(heading.getText());
         BrowserUtils.wait(2);
         driver.quit();
     }
