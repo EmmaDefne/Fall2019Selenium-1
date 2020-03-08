@@ -4,20 +4,36 @@ import com.automation.utilities.BrowserUtils;
 import com.automation.utilities.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-public class NoSelectDropdown {
+import org.openqa.selenium.support.ui.Select;
+
+public class SelectByIndex {
     public static void main(String[] args) {
+
+
         WebDriver driver = DriverFactory.createDriver("chrome");
+        BrowserUtils.wait(3);
         driver.get("http://practice.cybertekschool.com/dropdown");
+
         BrowserUtils.wait(3);
 
+        Select stateSelect = new Select(driver.findElement(By.id("state")));
+        stateSelect.selectByIndex(9);  //dc perhaps
 
-
-        driver.findElement(By.id("dropdownMenuLink")).click(); //to expand dropdown
-        BrowserUtils.wait(3);
-
-        driver.findElement(By.linkText("Amazon")).click(); //click on option
-        BrowserUtils.wait(3);
+        BrowserUtils.wait(2);
         driver.quit();
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
+
 
