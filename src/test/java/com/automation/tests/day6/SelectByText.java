@@ -37,15 +37,30 @@ public class SelectByText {
         List<WebElement> months=selectMonth.getOptions();
         for (WebElement month : months) {
             //get the month name and select based on that
-            selectMonth.selectByVisibleText(month.getText());
+           selectMonth.selectByVisibleText(month.getText());
             System.out.println(month.getText());
             BrowserUtils.wait(2);
         }
 
 
+    Select stateSelect=new Select(driver.findElement(By.id("state")));
+        stateSelect.selectByVisibleText("New Jersey");
 
+//option that is currently selected
+        //getFirstSelectedOption() -- returns a webelement, that's why we need to call getText() method
+        // getText() retrieves visible text from the webelement
+        String selected = stateSelect.getFirstSelectedOption().getText();
+        if (selected.equals("District Of Columbia")){
+            System.out.println("TEST PASSED");
+        }else{
+            System.out.println("TEST FAILED");
+        }
 
+        List<WebElement> states=stateSelect.getOptions();
+        for (WebElement state : states) {
 
+            System.out.println(state.getText());
+        }
 
 
 
