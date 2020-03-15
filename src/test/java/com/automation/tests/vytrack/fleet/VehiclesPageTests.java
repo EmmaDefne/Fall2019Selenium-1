@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -32,29 +33,25 @@ public class VehiclesPageTests {
     private WebDriver driver;
     @Test
     public void verifyPageSubTitle(){
-        driver.findElement(usernameBy).sendKeys(username);
-        driver.findElement(passwordBy).sendKeys(password, Keys.ENTER);
-        BrowserUtils.wait(5);
-        //click on fleet
-      //  driver.findElement(fleetBy).click();
-
-
-        //actions class is used for more advanced browser interactions
-        Actions actions=new Actions(driver);
-        //move to element instead of click
-       actions.moveToElement(driver.findElement(fleetBy)).perform();
-        //perform - to execute command
-        //every action should end with perform ()
-        //basicly we are moving mouse virtually on fleet, make options visible.
-
-
-
-        BrowserUtils.wait(2);
-        //click on Vehicles
-        driver.findElement(By.linkText("Vehicles")).click();
-        BrowserUtils.wait(5);
+//################################################################
+        //find subtitle element
         WebElement subTitleElement = driver.findElement(subtitleBy);
         System.out.println(subTitleElement.getText());
+        String expected = "All Cars";
+        String actual = subTitleElement.getText();
+        Assert.assertEquals(actual, expected);
+    }
+    /**
+     *
+     *     ################ TASK 7 minutes until 3:48
+     *
+     *     Given user is on the vytrack landing page
+     *     When user logs on as a store manager
+     *     Then user navigates to Fleet --> Vehicles
+     *     And user verifies that page number is equals to "1"
+     */
+    @Test
+    public void verifyPageNumber(){
     }
     @BeforeMethod
     public void setup() {
@@ -62,6 +59,25 @@ public class VehiclesPageTests {
         driver = new ChromeDriver();
         driver.get(URL);
         driver.manage().window().maximize();
+        //login
+        driver.findElement(usernameBy).sendKeys(username);
+        driver.findElement(passwordBy).sendKeys(password, Keys.ENTER);
+        //put more wait here as well, if didn't click
+        BrowserUtils.wait(5);
+        //click on fleet
+//        driver.findElement(fleetBy).click();
+        //Actions class is used for more advanced browser interactions
+        Actions actions = new Actions(driver);
+        //move to element instead of click
+        actions.moveToElement(driver.findElement(fleetBy)).perform();
+        //perform - to execute command
+        //every action should end with perform()
+        BrowserUtils.wait(2);
+        //click on Vehicles
+        driver.findElement(By.linkText("Vehicles")).click();
+        //put more wait time if you are getting Cars, Dashboard...
+        //this application is slooooow...
+        BrowserUtils.wait(5);
     }
     @AfterMethod
     public void teardown() {
@@ -74,4 +90,3 @@ public class VehiclesPageTests {
         }
     }
 }
-
