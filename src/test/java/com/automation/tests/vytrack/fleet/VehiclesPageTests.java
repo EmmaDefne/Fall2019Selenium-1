@@ -36,15 +36,16 @@ public class VehiclesPageTests {
         driver.findElement(passwordBy).sendKeys(password, Keys.ENTER);
         BrowserUtils.wait(5);
         //click on fleet
-        //driver.findElement(fleetBy).click();
+      //  driver.findElement(fleetBy).click();
 
 
         //actions class is used for more advanced browser interactions
         Actions actions=new Actions(driver);
         //move to element instead of click
-        actions.moveToElement(driver.findElement(fleetBy)).perform();
+       actions.moveToElement(driver.findElement(fleetBy)).perform();
         //perform - to execute command
         //every action should end with perform ()
+        //basicly we are moving mouse virtually on fleet, make options visible.
 
 
 
