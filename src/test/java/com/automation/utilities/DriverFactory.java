@@ -21,4 +21,6 @@ public class DriverFactory {
             return new FirefoxDriver();
         }
     }
-}
+
+    }
+
