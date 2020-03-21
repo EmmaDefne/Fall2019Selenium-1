@@ -1,4 +1,4 @@
-package com.automation.tests.vytrack;
+package com.automation.tests.day10_vytrack;
 
 import com.automation.utilities.BrowserUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
