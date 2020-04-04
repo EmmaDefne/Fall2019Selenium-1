@@ -3,7 +3,14 @@
 <suite name="Test suite">
     <test name="Login">
         <classes>
-           <class name="com.automation.tests.day10_vytrack.login.NewLoginTests"></class> 
+           <class name="com.automation.tests.day10_vytrack.login.NewLoginTests"/>
+               <class name="com.automation.tests.day10_vytrack.activities.NewCalendarEventsTests"/>
+
+        </classes>
+    </test>
+    <test name="Calendar events">
+        <classes>
+            <class name="com.automation.tests.day10_vytrack.activities.NewCalendarEventsTests"/>
         </classes>
     </test>
 </suite>
