@@ -71,7 +71,7 @@ public class VehiclesTests {
 
     @BeforeMethod
     public void setup() {
-        WebDriverManager.chromedriver().version("79").setup();
+        WebDriverManager.chromedriver().version("81").setup();
         driver = new ChromeDriver();
         driver.get(URL);
         driver.manage().window().maximize();

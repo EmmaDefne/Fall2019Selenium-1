@@ -69,6 +69,9 @@ public class CalendarEventsPageTests {
 
     @AfterMethod
     public void teardown(){
+        BrowserUtils.wait(2);
         driver.quit();
+        BrowserUtils.wait(2);
+
     }
 }

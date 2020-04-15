@@ -2,6 +2,7 @@
 
 <suite name="Test suite">
     <test name="Login">
+        <parameter name="reportName" value="login"></parameter>
         <classes>
            <class name="com.automation.tests.day10_vytrack.login.NewLoginTests"/>
                <class name="com.automation.tests.day10_vytrack.activities.NewCalendarEventsTests"/>
@@ -9,6 +10,7 @@
         </classes>
     </test>
     <test name="Calendar events">
+        <parameter name="reportName" value="calendarEvents"></parameter>
         <classes>
             <class name="com.automation.tests.day10_vytrack.activities.NewCalendarEventsTests"/>
         </classes>
